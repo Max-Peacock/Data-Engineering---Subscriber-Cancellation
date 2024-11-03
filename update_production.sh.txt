@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Define paths
+DEV_DIR="C:/Users/maxpe/OneDrive/Documents/Codecademy/Cancelled Subscribers Automated Data Ingestion/subscriber-pipeline-starter-kit/dev"
+PROD_DIR="C:/Users/maxpe/OneDrive/Documents/Codecademy/Cancelled Subscribers Automated Data Ingestion/subscriber-pipeline-starter-kit/production"
+LOG_FILE="$DEV_DIR/changelog.log"
+
+# Check the last version number in the changelog
+LAST_VERSION=$(tail -n 1 "$LOG_FILE" | grep -oP "Version \K[\d\.]+")
+
+if [ -z "$LAST_VERSION" ]; then
+    echo "No versions found in the changelog. Exiting."
+    exit 1
+fi
+
+# Run the Python script
+python "$DEV_DIR/Cademycode.py"  # Replace with the actual name of your Python script
+
+# Check for new updates in the changelog
+NEW_VERSION=$(tail -n 1 "$LOG_FILE" | grep -oP "Version \K[\d\.]+")
+
+if [ "$NEW_VERSION" != "$LAST_VERSION" ]; then
+    echo "New version $NEW_VERSION detected. Moving files to production."
+
+    # Move the updated files from dev to production
+    mv "$DEV_DIR/cademycode_cleaned.csv" "$PROD_DIR/"  # Update with actual filenames you want to move
+    mv "$DEV_DIR/cademycode.db" "$PROD_DIR/"  # Move the database file if needed
+else
+    echo "No new updates detected."
+fi

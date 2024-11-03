@@ -1,0 +1,14 @@
+2024-11-03 11:57:38,014 - __main__ - INFO - Successfully connected to the database.
+2024-11-03 11:57:38,016 - changelog - INFO - Version 1.0 - Rows Processed: 4744 - Date: 2024-11-03
+2024-11-03 11:57:38,023 - __main__ - INFO - Successfully connected to the database.
+2024-11-03 11:57:38,083 - __main__ - INFO - Test data loaded.
+2024-11-03 11:57:38,084 - __main__ - INFO - Data type test passed.
+2024-11-03 11:57:38,085 - __main__ - INFO - Database connection closed after tests.
+2024-11-03 11:57:38,086 - __main__ - INFO - Successfully connected to the database.
+2024-11-03 11:57:38,118 - __main__ - INFO - Test data loaded.
+2024-11-03 11:57:38,119 - __main__ - INFO - Data integrity test passed.
+2024-11-03 11:57:38,119 - __main__ - INFO - Database connection closed after tests.
+2024-11-03 11:57:38,121 - __main__ - INFO - Successfully connected to the database.
+2024-11-03 11:57:38,155 - __main__ - INFO - Test data loaded.
+2024-11-03 11:57:38,165 - __main__ - INFO - Null values test passed.
+2024-11-03 11:57:38,165 - __main__ - INFO - Database connection closed after tests.
